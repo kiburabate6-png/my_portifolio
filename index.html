@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio | Web Developer & Computer Science Student</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090d16',
+                        cardBg: '#111827',
+                        accent: '#6366f1',
+                        accentHover: '#4f46e5',
+                        emeraldAccent: '#10b981'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090d16;
+            color: #f3f4f6;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 selection:bg-indigo-500 selection:text-white">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-emerald-500 flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
+                    DT
+                </div>
+                <span class="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-400 bg-clip-text text-transparent">
+                    Portfolio
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Home</a>
+                <a href="#about" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">About</a>
+                <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Skills</a>
+                <a href="#projects" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Projects</a>
+                <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm transition-all shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50">
+                    Let's Talk
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800/80 hover:text-indigo-400">Home</a>
+            <a href="#about" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800/80 hover:text-indigo-400">About</a>
+            <a href="#skills" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800/80 hover:text-indigo-400">Skills</a>
+            <a href="#projects" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800/80 hover:text-indigo-400">Projects</a>
+            <a href="#contact" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800/80 hover:text-indigo-400">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen pt-32 pb-16 flex items-center relative overflow-hidden">
+        <!-- Background Glow Elements -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full glass-card border border-indigo-500/30 text-indigo-300 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Available for Opportunities & Projects</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Hi, I'm <span class="bg-gradient-to-r from-indigo-400 via-indigo-200 to-emerald-400 bg-clip-text text-transparent">Full-Stack Developer</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Computer Science student at <span class="text-indigo-400 font-semibold">Debre Tabor University</span>. Passionate about building robust web applications, enterprise network architectures, and interactive digital experiences.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-center transition-all shadow-lg shadow-indigo-600/30 hover:scale-[1.02]">
+                            <i class="fa-solid fa-code mr-2"></i> View Projects
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl glass-card text-slate-200 hover:text-white font-semibold text-center transition-all hover:bg-slate-800/80 hover:scale-[1.02]">
+                            <i class="fa-solid fa-envelope mr-2"></i> Contact Me
+                        </a>
+                    </div>
+
+                    <div class="flex items-center justify-center lg:justify-start space-x-6 pt-6 text-slate-400">
+                        <a href="https://github.com" target="_blank" class="hover:text-indigo-400 transition-colors text-xl"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="hover:text-indigo-400 transition-colors text-xl"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:contact@example.com" class="hover:text-indigo-400 transition-colors text-xl"><i class="fa-solid fa-at"></i></a>
+                        <a href="https://t.me" target="_blank" class="hover:text-indigo-400 transition-colors text-xl"><i class="fa-brands fa-telegram"></i></a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 rounded-3xl p-1 bg-gradient-to-tr from-indigo-500 via-emerald-400 to-indigo-700 shadow-2xl group">
+                        <div class="w-full h-full rounded-[22px] bg-slate-900 overflow-hidden flex flex-col items-center justify-center relative p-6 text-center">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-900"></div>
+                            <div class="w-24 h-24 rounded-2xl bg-indigo-600/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400 text-4xl mb-4 shadow-inner">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h3 class="text-white font-bold text-lg relative z-10">Debre Tabor University</h3>
+                            <p class="text-xs text-slate-400 mt-1 relative z-10">B.Sc. Computer Science</p>
+                            <div class="mt-4 inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium border border-emerald-500/20">
+                                <i class="fa-solid fa-circle-check mr-1.5 text-[10px]"></i> System & Web Engineer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Get to Know Me</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">About My Journey</h3>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-6 space-y-6">
+                    <h4 class="text-2xl font-bold text-white">Bridging Full-Stack Web Development, Networks, and Systems</h4>
+                    <p class="text-slate-300 leading-relaxed">
+                        I am an ambitious Computer Science student at Debre Tabor University with a deep passion for building scalable software solutions. My expertise spans full-stack web engineering, network infrastructure design, and game development scripting.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
+                        Whether architecting enterprise campus networks with Cisco Packet Tracer, developing secure backend management systems in PHP and MySQL, or designing responsive frontend interfaces, I love solving complex technical challenges from end to end.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="glass-card p-4 rounded-xl border border-slate-800">
+                            <span class="block text-3xl font-extrabold text-indigo-400">10+</span>
+                            <span class="text-xs text-slate-400 font-medium mt-1 block">Completed Projects</span>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl border border-slate-800">
+                            <span class="block text-3xl font-extrabold text-emerald-400">15+</span>
+                            <span class="text-xs text-slate-400 font-medium mt-1 block">Technologies Mastered</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="glass-card p-6 rounded-2xl border border-slate-800/80 space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-white">Web Engineering</h5>
+                        <p class="text-sm text-slate-400">Developing responsive, user-centric web applications and dynamic database workflows.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-slate-800/80 space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-white">Network Design</h5>
+                        <p class="text-sm text-slate-400">Configuring VLANs, VLSM, inter-VLAN routing, and secure system administrations.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-slate-800/80 space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-white">Game Development</h5>
+                        <p class="text-sm text-slate-400">Building interactive gameplay loops and HTTP client integrations using Godot 4 & GDScript.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-slate-800/80 space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h5 class="text-lg font-bold text-white">Academic Focus</h5>
+                        <p class="text-sm text-slate-400">Continuous learner and active contributor to computer science research and practical solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-slate-900/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Expertise & Tools</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Technical Skills</h3>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Category 1: Frontend & Web -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Frontend & Web Tech</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-brands fa-html5 text-orange-500 mr-1.5"></i> HTML5</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-brands fa-css3-alt text-blue-500 mr-1.5"></i> CSS3 / Tailwind</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-brands fa-js text-yellow-400 mr-1.5"></i> JavaScript</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-brands fa-bootstrap text-purple-400 mr-1.5"></i> Bootstrap</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-brands fa-php text-indigo-400 mr-1.5"></i> PHP & MySQL</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-solid fa-paintbrush text-emerald-400 mr-1.5"></i> HTML5 Canvas</span>
+                    </div>
+                </div>
+
+                <!-- Category 2: Systems & Networking -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Systems & Networking</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-solid fa-network-wired text-emerald-400 mr-1.5"></i> Cisco Packet Tracer</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-solid fa-sitemap text-indigo-400 mr-1.5"></i> VLANs & Inter-VLAN</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-solid fa-calculator text-blue-400 mr-1.5"></i> VLSM Subnetting</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-brands fa-linux text-yellow-300 mr-1.5"></i> Linux Admin (Samba/NFS)</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-brands fa-git-alt text-orange-500 mr-1.5"></i> Git & GitHub</span>
+                    </div>
+                </div>
+
+                <!-- Category 3: Game & Embedded -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Game & Embedded</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-solid fa-gamepad text-purple-400 mr-1.5"></i> Godot 4 / GDScript</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-solid fa-microchip text-teal-400 mr-1.5"></i> Arduino / C++</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-solid fa-database text-blue-400 mr-1.5"></i> MySQLi Databases</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700/60 flex items-center"><i class="fa-solid fa-terminal text-green-400 mr-1.5"></i> Bash Scripting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Portfolio Showcase</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Featured Projects</h3>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Project Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12">
+                <button onclick="filterProjects('all')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 text-white transition-all shadow-md">All Projects</button>
+                <button onclick="filterProjects('web')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">Web Apps</button>
+                <button onclick="filterProjects('network')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">Networks</button>
+                <button onclick="filterProjects('game')" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">Games & Other</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: MediCare Clinic Management System -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col transition-all duration-300" data-category="web">
+                    <div class="h-48 bg-gradient-to-tr from-blue-900/60 to-indigo-900/40 relative flex items-center justify-center p-6 border-b border-slate-800">
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-semibold border border-blue-500/30">Web System</div>
+                        <i class="fa-solid fa-hospital-user text-5xl text-blue-400 drop-shadow-lg"></i>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">MediCare Clinic Management System</h4>
+                            <p class="text-sm text-slate-300 line-clamp-3">
+                                Comprehensive clinic platform featuring role-based workflows for doctors, patients, and administrators, plus integrated lab fee approvals and appointment scheduling.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-indigo-300 text-[11px] font-medium border border-slate-700">PHP</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-indigo-300 text-[11px] font-medium border border-slate-700">MySQLi</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-indigo-300 text-[11px] font-medium border border-slate-700">Bootstrap</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                                <button onclick="openDemoModal('MediCare Clinic Management System', 'A comprehensive role-based medical clinic management system built with PHP and MySQLi. It handles patient records, doctor queues, prescription tracking, and lab fee payment approvals securely.')" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center">
+                                    <i class="fa-solid fa-eye mr-1.5"></i> Live Demo
+                                </button>
+                                <a href="https://github.com" target="_blank" class="text-xs font-semibold text-slate-400 hover:text-white flex items-center">
+                                    <i class="fa-brands fa-github mr-1.5"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: GSA Sport Academy Management System -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col transition-all duration-300" data-category="web">
+                    <div class="h-48 bg-gradient-to-tr from-emerald-900/60 to-teal-900/40 relative flex items-center justify-center p-6 border-b border-slate-800">
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-semibold border border-emerald-500/30">Web System</div>
+                        <i class="fa-solid fa-futbol text-5xl text-emerald-400 drop-shadow-lg"></i>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">GSA Sport Academy Management</h4>
+                            <p class="text-sm text-slate-300 line-clamp-3">
+                                Dedicated sports academy management tool built for athlete registration, membership tracking, training schedule allocation, and performance logging.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-emerald-300 text-[11px] font-medium border border-slate-700">PHP</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-emerald-300 text-[11px] font-medium border border-slate-700">HTML5</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-emerald-300 text-[11px] font-medium border border-slate-700">CSS / JS</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                                <button onclick="openDemoModal('GSA Sport Academy Management System', 'Streamlines sports academy operations including athlete recruitment, attendance tracking, tier-based membership renewals, and coach management dashboards.')" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center">
+                                    <i class="fa-solid fa-eye mr-1.5"></i> Live Demo
+                                </button>
+                                <a href="https://github.com" target="_blank" class="text-xs font-semibold text-slate-400 hover:text-white flex items-center">
+                                    <i class="fa-brands fa-github mr-1.5"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Online Bus Station Management System -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col transition-all duration-300" data-category="web">
+                    <div class="h-48 bg-gradient-to-tr from-amber-900/60 to-orange-900/40 relative flex items-center justify-center p-6 border-b border-slate-800">
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-semibold border border-amber-500/30">Bilingual Web</div>
+                        <i class="fa-solid fa-bus text-5xl text-amber-400 drop-shadow-lg"></i>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Online Bus Station Management</h4>
+                            <p class="text-sm text-slate-300 line-clamp-3">
+                                Ticket booking and transit schedule administration platform featuring full bilingual support (English & Amharic) for seamless passenger interaction.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-amber-300 text-[11px] font-medium border border-slate-700">PHP</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-amber-300 text-[11px] font-medium border border-slate-700">MySQL</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-amber-300 text-[11px] font-medium border border-slate-700">Bilingual (EN/AM)</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                                <button onclick="openDemoModal('Online Bus Station Management System', 'An online transit booking system with real-time seat reservation, schedule management for dispatchers, and full English & Amharic language localization.')" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center">
+                                    <i class="fa-solid fa-eye mr-1.5"></i> Live Demo
+                                </button>
+                                <a href="https://github.com" target="_blank" class="text-xs font-semibold text-slate-400 hover:text-white flex items-center">
+                                    <i class="fa-brands fa-github mr-1.5"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Centralized Campus Network Design -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col transition-all duration-300" data-category="network">
+                    <div class="h-48 bg-gradient-to-tr from-purple-900/60 to-indigo-900/40 relative flex items-center justify-center p-6 border-b border-slate-800">
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-semibold border border-purple-500/30">Network Topology</div>
+                        <i class="fa-solid fa-network-wired text-5xl text-purple-400 drop-shadow-lg"></i>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Centralized Campus Network Design</h4>
+                            <p class="text-sm text-slate-300 line-clamp-3">
+                                Comprehensive enterprise campus network simulation engineered in Cisco Packet Tracer, utilizing VLSM subnetting and inter-VLAN routing for secure department segmentation.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-purple-300 text-[11px] font-medium border border-slate-700">Cisco Packet Tracer</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-purple-300 text-[11px] font-medium border border-slate-700">VLSM</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-purple-300 text-[11px] font-medium border border-slate-700">VLANs</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                                <button onclick="openDemoModal('Centralized Campus Network Design', 'An advanced Cisco Packet Tracer simulation featuring multi-building campus connectivity, core/distribution switch redundancy, VLSM IP optimization, and inter-VLAN security routing.')" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center">
+                                    <i class="fa-solid fa-eye mr-1.5"></i> Live Demo
+                                </button>
+                                <a href="https://github.com" target="_blank" class="text-xs font-semibold text-slate-400 hover:text-white flex items-center">
+                                    <i class="fa-brands fa-github mr-1.5"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Spinning Lottery Wheel Application -->
+                <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col transition-all duration-300" data-category="game">
+                    <div class="h-48 bg-gradient-to-tr from-pink-900/60 to-purple-900/40 relative flex items-center justify-center p-6 border-b border-slate-800">
+                        <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-pink-500/20 text-pink-400 text-xs font-semibold border border-pink-500/30">Game & Canvas</div>
+                        <i class="fa-solid fa-dharmachakra text-5xl text-pink-400 drop-shadow-lg"></i>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Spinning Lottery Wheel Application</h4>
+                            <p class="text-sm text-slate-300 line-clamp-3">
+                                Interactive lottery wheel built with Godot 4 & GDScript, featuring HTTPRequest backend synchronization with PHP/MySQL and HTML5 responsive canvas rendering.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-pink-300 text-[11px] font-medium border border-slate-700">Godot 4</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-pink-300 text-[11px] font-medium border border-slate-700">GDScript</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-pink-300 text-[11px] font-medium border border-slate-700">HTML5 Canvas</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                                <button onclick="openDemoModal('Spinning Lottery Wheel Application', 'A gamified lucky draw wheel featuring smooth physics animation in Godot 4, networked prize distribution via PHP/MySQL REST endpoints, and custom HTML5 canvas rendering.')" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center">
+                                    <i class="fa-solid fa-eye mr-1.5"></i> Live Demo
+                                </button>
+                                <a href="https://github.com" target="_blank" class="text-xs font-semibold text-slate-400 hover:text-white flex items-center">
+                                    <i class="fa-brands fa-github mr-1.5"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-900/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-indigo-400 font-bold mb-3">Get In Touch</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Let's Work Together</h3>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-6">
+                    <h4 class="text-2xl font-bold text-white">Connect with me</h4>
+                    <p class="text-slate-300 leading-relaxed">
+                        I am actively seeking software engineering internships, collaborative web development projects, and networking opportunities. Feel free to drop a message!
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-medium">Email Me</span>
+                                <a href="mailto:contact@example.com" class="text-sm font-semibold text-white hover:text-indigo-400 transition-colors">developer@debreatabor.edu.et</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-medium">Location</span>
+                                <span class="text-sm font-semibold text-white">Debre Tabor University, Ethiopia</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-medium">Institution</span>
+                                <span class="text-sm font-semibold text-white">Department of Computer Science</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="glass-card p-8 rounded-3xl border border-slate-800 shadow-xl">
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Name</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors" placeholder="John Doe">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Email</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors" placeholder="john@example.com">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Message</label>
+                                <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Hello, I would like to discuss a project..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center space-x-2">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+
+                        <div id="form-success" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-center font-medium">
+                            <i class="fa-solid fa-circle-check mr-2"></i> Thank you! Your message has been sent successfully.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+            <div class="flex justify-center space-x-6 text-slate-400 text-lg">
+                <a href="https://github.com" target="_blank" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:contact@example.com" class="hover:text-indigo-400 transition-colors"><i class="fa-solid fa-at"></i></a>
+                <a href="https://t.me" target="_blank" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+            <p>&copy; 2026 Developer Portfolio. Built with Tailwind CSS & JavaScript.</p>
+        </div>
+    </footer>
+
+    <!-- Project Demo Modal -->
+    <div id="demo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4">
+        <div class="glass-card max-w-lg w-full p-6 sm:p-8 rounded-3xl border border-slate-700 relative space-y-4 animate-in fade-in zoom-in duration-200">
+            <button onclick="closeDemoModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h3 id="modal-title" class="text-2xl font-bold text-white">Project Title</h3>
+            <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed">Project description goes here...</p>
+            <div class="pt-4 flex justify-end">
+                <button onclick="closeDemoModal()" class="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm transition-all">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu, Filtering & Simulated Form -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Project filtering logic
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.project-filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
+            event.target.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Project Demo Modal logic
+        function openDemoModal(title, description) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = description;
+            const modal = document.getElementById('demo-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeDemoModal() {
+            const modal = document.getElementById('demo-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Simulated Contact Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contact-form');
+            const successMsg = document.getElementById('form-success');
+            
+            form.reset();
+            successMsg.classList.remove('hidden');
+
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
